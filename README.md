@@ -80,7 +80,7 @@ function redirect() {
 
 // add new issue
 $scope.add = function() {
-    // $scope.issue is copied from first one, see code
+    // $scope.issue is copied from first one, see app.js
     Restangular.all('issues')
         .post($scope.issue)
         .then(redirect);
