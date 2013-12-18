@@ -8,5 +8,15 @@
       "id": 102,
       "text": "crash on login"
     }
+  ],
+  "people": [
+    {
+      "id": 101,
+      "name": "Gleb"
+    },
+    {
+      "id": 102,
+      "name": "John"
+    }
   ]
 }
