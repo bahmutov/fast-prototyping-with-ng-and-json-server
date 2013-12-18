@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Restangular + json-server</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.4/angular-route.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <div ng-app="project" class="container">
+      <div class="page-header">
+        <h1>Fast AngularJs prototyping</h1>
+        <small>Using <a target="_blank"
+          href="https://github.com/typicode/json-server">json-server</a>
+        and <a target="_blank"
+          href="https://github.com/mgonto/restangular">restangular</a></small>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-view></div>
+        </div>
+      </div>
+
+      <div>
+        <p>Add / edit a couple of items, then check JSON backend from command line:</p>
+        <pre>curl http://localhost:3000/issues</pre>
+        <p>The data is live</p>
+      </div>
+
+      <script type="text/ng-template" id="list.html">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>Text</th>
+            <th>
+              <a href="#/new" title="Add new issue">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="issue in issues">
+            <td>{{issue.id}}</td>
+            <td>{{issue.text}}</td>
+            <td>
+              <a href="#/edit/{{issue.id}}" title="edit issue">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </script>
+
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="form-horizontal" role="form">
+        <div class="form-group" ng-show="issue.id">
+          <label for="id">ID:</label>
+          <span id="id" name="id">{{issue.id}}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Text:</label>
+          <textarea id="description" name="description"
+            ng-model="issue.text"></textarea>
+        </div>
+
+          <a href="#/" class="btn btn-default">Cancel</a>
+          <button ng-click="save()" class="btn btn-primary">Save</button>
+
+          <button ng-click="destroy()"
+                  ng-show="issue.id" class="btn btn-danger">Delete</button>
+        </form>
+      </script>
+    </div>
+
+  </body>
+</html>

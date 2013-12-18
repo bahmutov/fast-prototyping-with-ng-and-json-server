@@ -3,9 +3,11 @@
 Installation:
 
 ```sh
+// global tools
 sudo npm install -g json-server
 sudo npm install -g http-server
-bower install restangular
+// this project's dependencies
+bower install
 ```
 
 Create data JSON file
@@ -29,11 +31,17 @@ Start the JSON REST server
 
 ```sh
 json-server -f issues.json
+```
+
+Test returned values
+```sh
 curl http://localhost:3000/issues
 curl http://localhost:3000/issues/101
 ```
 
-you can try different verbs: PUT, DELETE, POST, GET
+you can try different verbs: PUT, DELETE, POST, GET - the data is updated
+
+
 
 Start web server with angularjs
 

@@ -1,0 +1,28 @@
+{
+  "name": "fast-prototyping-with-ng-and-json-server",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bahmutov/fast-prototyping-with-ng-and-json-server",
+  "authors": [
+    "Gleb Bahmutov <gleb.bahmutov@gmail.com>"
+  ],
+  "description": "Fast prototyping using ng restangular against json-server example",
+  "main": "index.html",
+  "keywords": [
+    "angularjs",
+    "json-server",
+    "restangular",
+    "example",
+    "prototype"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "restangular": "~1.2.1"
+  }
+}
