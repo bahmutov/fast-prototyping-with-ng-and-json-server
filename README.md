@@ -5,7 +5,6 @@ Installation:
 ```sh
 // global tools
 sudo npm install -g json-server
-sudo npm install -g http-server
 // this project's dependencies
 bower install
 ```
@@ -35,7 +34,7 @@ json-server -f issues.json
 
 Test returned values
 ```sh
-curl -X DELETE http://localhost:3000/issues/102
+curl http://localhost:3000/issues
 curl http://localhost:3000/issues/101
 ```
 
@@ -43,19 +42,12 @@ you can try different verbs: PUT, DELETE, POST, GET - the data is updated
 
 ```sh
 curl -X DELETE http://localhost:3000/issues/102
-curl -X DELETE http://localhost:3000/issues/102
 [
   {
     "id": 101,
     "text": "something is not right"
   }
 ]
-```
-
-Start web server with angularjs
-
-```sh
-http-server -p 3001
 ```
 
 Point restangular at JSON server's base url
@@ -95,3 +87,5 @@ $scope.save = function() {
     $scope.issue.put().then(redirect);
 };
 ```
+
+Open *index.html* in the browser and enjoy!

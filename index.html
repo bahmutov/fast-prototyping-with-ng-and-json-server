@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Restangular + json-server</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <script src="bower_components/angular/angular.js"></script>
-    <script src="http://code.angularjs.org/1.2.4/angular-route.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
     <script type="text/javascript" src="bower_components/restangular/dist/restangular.js"></script>
     <script src="app.js"></script>
@@ -27,10 +27,12 @@
         </div>
       </div>
 
-      <div>
-        <p>Add / edit a couple of items, then check JSON backend from command line:</p>
-        <pre>curl http://localhost:3000/issues</pre>
-        <p>The data is live</p>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Add / edit a couple of items, then check JSON backend from command line:</p>
+          <pre>curl http://localhost:3000/issues</pre>
+          <p>The data is live</p>
+        </div>
       </div>
 
       <script type="text/ng-template" id="list.html">

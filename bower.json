@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "restangular": "~1.2.1"
+    "restangular": "~1.2.1",
+    "angular-route": "~1.2.5"
   }
 }
