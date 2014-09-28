@@ -6,6 +6,7 @@ Installation:
 // global tools
 sudo npm install -g json-server
 // this project's dependencies
+cd public
 bower install
 ```
 
@@ -29,7 +30,7 @@ Create sample data JSON file (or use issues.json)
 Start the JSON REST server
 
 ```sh
-json-server -f issues.json
+json-server issues.json
 ```
 
 Test returned values
