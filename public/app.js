@@ -5,12 +5,12 @@ angular.module('project', ['restangular', 'ngRoute']).
         controller:ListCtrl,
         templateUrl:'list.html'
       }).
-      when('/edit/:projectId', {
+      when('/edit/:issueId', {
         controller:EditCtrl,
         templateUrl:'detail.html',
         resolve: {
           issue: function(Restangular, $route) {
-            var id = $route.current.params.projectId;
+            var id = $route.current.params.issueId;
             return Restangular.one('issues', id).get();
           }
         }
